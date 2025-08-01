@@ -1,0 +1,111 @@
+body {
+    background-image: url("bgfront.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:'Courier New', Courier, monospace;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h2 {
+  margin-bottom: 0.5rem;
+}
+
+.popup-content button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: rgb(241, 159, 169);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.frontp {
+    background-color: rgb(240, 242, 214);
+    border-radius: 10px;
+    margin: auto;
+    position: relative;
+    width: 50%;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    margin-top: 100px;
+    box-shadow: 0 8px 20px rgba(41, 41, 18, 0.15);
+    backdrop-filter: blur(3px);
+}
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    gap: 50px;             
+    margin-top: 2rem;       
+}
+
+.date {
+    height: 5rem;
+    width: 5rem;
+    font-size: 20px;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;   
+    background-color: rgb(241, 159, 169);
+    padding: 0.5rem;
+    text-align: center;   
+}
+
+.date span {
+    display: block;
+    font-size: 1.5rem;
+    padding: 0;
+    margin-bottom: 0.25rem;
+}
+
+.date p {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;       
+}
+
+h1{
+    font-size: 3rem;
+    color: rgb(241, 159, 169);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 7rem;
+}
+
+.btn {
+    font-size: 1.3rem;
+    padding: 0.6rem 2.2rem;
+    margin: 0.6rem;
+    border: 2px solid #eacda9;
+    border-radius: 12px;
+    background-color: #ffdeabcc; 
+    color: #724512;
+    box-shadow: 2px 2px 0 #b88559;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-left: 40%
+}

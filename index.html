@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title> To My Love, Trisha </title>
+        <link rel="icon" href="https://raw.githubusercontent.com/meanlego/to_my_trisha/64e746aa56802bbd1d9de4c00f6e5375ccb8bdbd/icon.png?token=BCUELMYHLYCSY3NLZJ4OUBLIRO27A">
+         <link rel="stylesheet" href="style.css">
+         
+    </head>
+    <body>
+        <div id="popup1" class="popup">
+          <div class="popup-content">
+            <h2>HAPPY FRIENDSHIPSARY MY BFF! <br>
+                MY LOVE, AND MY FAV PERSON 💗 </h2>
+            <button onclick="showNextPopup(2)">next</button>
+          </div>
+        </div>
+        <div id="popup2" class="popup" style="display: none;">
+          <div class="popup-content">
+            <h2>idk what to give to u..</h2>
+            <button onclick="showNextPopup(3)">next</button>
+          </div>
+        </div>
+        <div id="popup3" class="popup" style="display: none;">
+          <div class="popup-content">
+            <h3> but here! <br>
+                 a website of our 8th year friendship! <br>
+                 hope u like it bff!! </h3>
+            <button onclick="closeAllPopups()">enter</button>
+          </div>
+        </div>
+        <div class = "frontp">
+             <h1> We've been together for </h1>
+            <div class = "container">
+                <div  class = "date"> 
+                    <span id="years"> - </span>
+                    <p> Years </p>
+                </div>
+                <div  class = "date"> 
+                    <span id="months"> - </span>
+                    <p> Months </p>
+                </div>
+                <div  class = "date"> 
+                    <span id="days"> - </span>
+                    <p> Days </p>
+                </div>
+            </div>
+             <button class="btn"  onclick="window.location.href='mainpage.html'"> Open </button>
+        </div>
+        
+    <script>
+
+         function showNextPopup(nextNum) {
+            document.querySelectorAll(".popup").forEach(popup => popup.style.display = "none");
+            document.getElementById("popup" + nextNum).style.display = "flex";
+        }
+
+        function closeAllPopups() {
+            document.querySelectorAll(".popup").forEach(popup => popup.style.display = "none");
+            document.getElementById("mainContent").style.display = "block";
+        }
+
+        window.onload = function () {
+            document.getElementById("popup1").style.display = "flex";
+        };
+
+        function calculateTimeSince(startDate) {
+            const now = new Date();
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+            let days = now.getDate() - startDate.getDate();
+
+            if (days < 0) {
+                months -= 1;
+                const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+
+            if (months < 0) {
+                years -= 1;
+                months += 12;
+            }
+
+            return { years, months, days };
+        }
+
+        function updateTimePassed() {
+            const startDate = new Date('2017-08-01');
+            const { years, months, days } = calculateTimeSince(startDate);
+
+            document.getElementById("years").textContent = years;
+            document.getElementById("months").textContent = months;
+            document.getElementById("days").textContent = days;
+        }
+
+        updateTimePassed();
+        setInterval(updateTimePassed, 86400000); 
+
+        function runAtMidnight() {
+         const now = new Date();
+         const millisTillMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).getTime() - now.getTime();
+
+        setTimeout(function () {
+        updateTimePassed(); // update exactly at midnight
+        setInterval(updateTimePassed, 86400000); // then every day
+        }, millisTillMidnight);
+        }
+
+        updateTimePassed(); // initial call
+        runAtMidnight();    // schedule midnight updates
+
+    </script>
+    </body>
+</html>
